@@ -1,48 +1,57 @@
 <!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Where Can We Take You?</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="container">
-        <h1>WHERE CAN WE TAKE YOU?</h1>
-        <div class="menu">
-            <button onclick="location.href='#о нас';"><img src="logo.png" alt="О нас"></button>
-            <button onclick="location.href='#все';"><span>ВСЕ</span></button>
-            <button onclick="location.href='#избранное';"><span>ИЗБРАННОЕ</span></button>
-            <button onclick="location.href='#книги';"><span>КНИГИ</span></button>
-            <button onclick="location.href='#маршруты';"><span>МАРШРУТЫ</span></button>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>News Django</title>
+        <!-- Favicon-->
+        {% load static %}
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+   <div class="container">
+       <a class="navbar-brand" href="#">Навигация</a>
+       <button class="navbar-toggler" type="button" data-toggle="collapse"
+               data-target="#navbarResponsive"
+               aria-controls="navbarResponsive" aria-expanded="false"
+               aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse" id="navbarResponsive">
+           <ul class="navbar-nav ml-auto">
+<!--               <li class="nav-item active">-->
+<!--                   <a class="nav-link" href="#">Home-->
+<!--                       <span class="sr-only">(current)</span>-->
+<!--                   </a>-->
+               </li>
+
+               </li>
+               <li class="nav-item">
+                   <a class="nav-link" href="/article/"> Артиклы  </a>
+               </li>
+                </li>
+               <li class="nav-item">
+                   <a class="nav-link" href="/rating/">Отзывы</a>
+               </li>
+           </ul>
+       </div>
+   </div>
+</nav>
+        <!-- Page content-->
+        <div class="container">
+            <div class="text-center mt-5">
+                <h1>{{ flatpage.title}}</h1>
+                <p class="lead">{{flatpage.content}}</p>
+                {% block content %}
+                {% endblock content %}
+<!--                <p>Bootstrap v5.2.3</p>-->
+            </div>
         </div>
-        <hr>
-        <div id="о нас" class="section">
-            <h2>МОСКВА СЕДЗАМ</h2>
-            <h4>НЕ ВЕРИТ</h4>
-            <p>Зрители помнят сцену из фильма где поэт А.А. Вознесенский читает стихи советских авторов у памятника Владимиру Маяковскому.</p>
-        </div>
-        <div id="все" class="section">
-            <h2>МОСКВА СЕДЗАМ</h2>
-            <h4>НЕ ВЕРИТ</h4>
-            <p>Зрители помнят сцену из фильма где поэт А.А. Вознесенский читает стихи советских авторов у памятника Владимиру Маяковскому.</p>
-        </div>
-        <div id="избранное" class="section">
-            <h2>МОСКВА СЕДЗАМ</h2>
-            <h4>НЕ ВЕРИТ</h4>
-            <p>Зрители помнят сцену из фильма где поэт А.А. Вознесенский читает стихи советских авторов у памятника Владимиру Маяковскому.</p>
-        </div>
-        <div id="книги" class="section">
-            <h2>МОСКВА СЕДЗАМ</h2>
-            <h4>НЕ ВЕРИТ</h4>
-            <p>Зрители помнят сцену из фильма где поэт А.А. Вознесенский читает стихи советских авторов у памятника Владимиру Маяковскому.</p>
-        </div>
-        <div id="маршруты" class="section">
-            <h2>МОСКВА СЕДЗАМ</h2>
-            <h4>НЕ ВЕРИТ</h4>
-            <p>Зрители помнят сцену из фильма где поэт А.А. Вознесенский читает стихи советских авторов у памятника Владимиру Маяковскому.</p>
-        </div>
-    </div>
-    <script src="script.js"></script>
-</body>
+    </body>
 </html>
