@@ -1,0 +1,94 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ececff;
+    color: #000;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 70px); /* Высота с учетом фиксированной шапки */
+}
+
+/* Меню навигации */
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.menu button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.menu img {
+    width: 30px;
+    height: 30px;
+}
+
+.menu span {
+    display: block;
+    padding: 10px 20px;
+    background-color: #ffb700;
+    color: white;
+    border-radius: 4px;
+}
+
+/* Разделы */
+.section {
+    display: none;
+    padding: 20px;
+    line-height: 1.5em;
+}
+
+.section h2 {
+    margin-top: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.section h4 {
+    margin-top: 0;
+    font-size: 18px;
+    font-style: italic;
+}
+
+.section p {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+/* Активный раздел */
+.active {
+    display: block;
+}
+
+/* Эффект при наведении на кнопки меню */
+.menu button:hover .section {
+    display: block !important;
+}
+
+.menu button:hover {
+    transform: scale(1.1);
+}
+
+.menu button:hover span {
+    background-color: #fbbd0a;
+}
