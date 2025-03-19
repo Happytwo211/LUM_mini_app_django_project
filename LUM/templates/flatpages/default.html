@@ -1,57 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>News Django</title>
-        <!-- Favicon-->
-        {% load static %}
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <!-- Responsive navbar-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-   <div class="container">
-       <a class="navbar-brand" href="#">Навигация</a>
-       <button class="navbar-toggler" type="button" data-toggle="collapse"
-               data-target="#navbarResponsive"
-               aria-controls="navbarResponsive" aria-expanded="false"
-               aria-label="Toggle navigation">
-           <span class="navbar-toggler-icon"></span>
-       </button>
-       <div class="collapse navbar-collapse" id="navbarResponsive">
-           <ul class="navbar-nav ml-auto">
-<!--               <li class="nav-item active">-->
-<!--                   <a class="nav-link" href="#">Home-->
-<!--                       <span class="sr-only">(current)</span>-->
-<!--                   </a>-->
-               </li>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Личный кабинет</title>
+<!--  <link rel="stylesheet" href="styles.css"> &lt;!&ndash; Подключаем файл стилей &ndash;&gt;-->
+</head>
+<body>
 
-               </li>
-               <li class="nav-item">
-                   <a class="nav-link" href="/article/"> Артиклы  </a>
-               </li>
-                </li>
-               <li class="nav-item">
-                   <a class="nav-link" href="/rating/">Отзывы</a>
-               </li>
-           </ul>
-       </div>
-   </div>
-</nav>
-        <!-- Page content-->
-        <div class="container">
-            <div class="text-center mt-5">
-                <h1>{{ flatpage.title}}</h1>
-                <p class="lead">{{flatpage.content}}</p>
-                {% block content %}
-                {% endblock content %}
-<!--                <p>Bootstrap v5.2.3</p>-->
-            </div>
-        </div>
-    </body>
+  <!-- Навигационная панель -->
+  <nav class="navbar">
+    <a href="#">Мини-игры</a>
+
+    <a href="#">Квизы</a>
+    <a href="/miniapp/user/1/">Профиль</a>
+
+
+  </nav>
+
+</body>
+<body>
+
+{% block user_box %} {% endblock %}
+
+
+</body>
 </html>
+
+<style>
+    body {
+  margin: 0; /* Убираем отступы по краям */
+  background-color: #ffcdd2; /* Нежно-красный фон */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Устанавливаем минимальную высоту окна браузера */
+}
+
+.square-container {
+  width: 400px; /* Ширина квадрата */
+  height: 400px; /* Высота квадрата */
+  border: 2px solid black; /* Рамка вокруг квадрата */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white; /* Фоновый цвет квадрата */
+}
+
+.square-image {
+  max-width: 100%; /* Изображение внутри квадрата */
+  max-height: 100%;
+}
+
+/* Навигационная панель */
+.navbar {
+  gap: 20px;
+  position: fixed; /* Фиксируем внизу экрана */
+  bottom: 0;
+  width: 100%;
+  height: 50px; /* Высота панели */
+  background-color: #f48fb1; /* Цвет панели */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: white;
+}
+</style>
