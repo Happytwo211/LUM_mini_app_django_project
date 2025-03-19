@@ -1,9 +1,11 @@
 {%extends 'flatpages/default.html'%}
 
 {% block content %}
+
 {% block user_box %}
+
     {% if user_benefits_data %}
-        <!-- Содержание страницы -->
+
           <div class="content">
             <h1>{{user_benefits_data.user}}</h1>
               <h1>Количесвто бонусов:{{user_benefits_data.user_benefits_quantity}}</h1>
@@ -12,12 +14,22 @@
 
           <!-- Большой квадрат для изображения -->
           <div class="square-container">
-            <img src="https://i.postimg.cc/YGNnrsym/img.png'" alt="Ошибка загрузки изображения" class="square-image">
+          <img src="https://i.postimg.cc/YGNnrsym/img.png" alt="Ошибка загрузки изображения" class="zoom">
 
           </div>
+
     {% else %}
+
         <h1> Такого пользователя нет!</h1>
+
     {% endif %}
+
 {% endblock %}
+
+{% block img %}
+
+'https://i.postimg.cc/YGNnrsym/img.png'
+{% endblock %}
+
 {% endblock content %}
 

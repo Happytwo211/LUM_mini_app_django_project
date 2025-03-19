@@ -27,6 +27,8 @@ class User_benefits_data(models.Model):
     user_benefits_type = models.ManyToManyField(Benefits)
     user_benefits_quantity = models.IntegerField(default=0)
 
+    def user_name(self):
+        return self.user.get_username()
     def __str__(self):
         return f'Пользователь:{self.user}-Количество бонусов:{self.user_benefits_quantity}'
 

@@ -2,6 +2,11 @@
 
 {% block content %}
 {% block user_list %}
-    {{user_list}}
+
+{% for user in user_list %}
+    {{ user.username }}
+{% endfor %}
+<!--    {{user_list}}-->
+<!--{{user_list.username}}-->
 {% endblock %}
 {% endblock content %}
