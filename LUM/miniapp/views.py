@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from .models import User_benefits_data
-from django.views.generic import DetailView
+from .models import User_benefits_data, User
+from django.views.generic import DetailView, ListView
 
 
 class UserBenefitsView(DetailView):
@@ -8,4 +8,11 @@ class UserBenefitsView(DetailView):
     ordering = 'user'
     template_name = 'user_benefits_data.html'
     context_object_name = 'user_benefits_data'
+
+
+
+class UserList(ListView):
+    model = User
+    template_name = 'user_list.html'
+    context_object_name = 'user_list'
 

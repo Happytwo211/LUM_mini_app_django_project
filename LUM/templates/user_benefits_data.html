@@ -2,16 +2,21 @@
 
 {% block content %}
 {% block user_box %}
-<!-- Содержание страницы -->
-  <div class="content">
-    <h1>{{user_benefits_data.user}}</h1>
-      <h1>Количесвто бонусов:{{user_benefits_data.user_benefits_quantity}}</h1>
-    <p>Информация о пользователе</p>
-  </div>
+    {% if user_benefits_data %}
+        <!-- Содержание страницы -->
+          <div class="content">
+            <h1>{{user_benefits_data.user}}</h1>
+              <h1>Количесвто бонусов:{{user_benefits_data.user_benefits_quantity}}</h1>
+            <p>Информация о пользователе</p>
+          </div>
 
-  <!-- Большой квадрат для изображения -->
-  <div class="square-container">
-    <img src="your-image.jpg" alt="Ваше изображение" class="square-image">
-  </div>
+          <!-- Большой квадрат для изображения -->
+          <div class="square-container">
+            <img src="your-image.jpg" alt="Ваше изображение" class="square-image">
+          </div>
+    {% else %}
+        <h1> Такого пользователя нет!</h1>
+    {% endif %}
 {% endblock %}
 {% endblock content %}
+

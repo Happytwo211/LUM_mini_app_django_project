@@ -21,7 +21,8 @@ class Benefits(models.Model):
         return f'{self.benefits_type}'
 
 class User_benefits_data(models.Model):
-    user = models.ForeignKey(User, default=0, on_delete=models.CASCADE)
+    user = models.ForeignKey(
+        to=User, default=0, on_delete=models.CASCADE)
     # user_benefits_type = models.ForeignKey(Benefits, on_delete=models.CASCADE)
     user_benefits_type = models.ManyToManyField(Benefits)
     user_benefits_quantity = models.IntegerField(default=0)
