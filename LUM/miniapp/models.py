@@ -3,6 +3,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
+
 class Benefits(models.Model):
     promo_code = 'PC'
     bonus = 'BO'
@@ -21,6 +22,7 @@ class Benefits(models.Model):
         return f'{self.benefits_type}'
 
 class User_benefits_data(models.Model):
+
     user = models.ForeignKey(
         to=User, default=0, on_delete=models.CASCADE)
     # user_benefits_type = models.ForeignKey(Benefits, on_delete=models.CASCADE)
@@ -31,4 +33,6 @@ class User_benefits_data(models.Model):
         return self.user.get_username()
     def __str__(self):
         return f'Пользователь:{self.user}-Количество бонусов:{self.user_benefits_quantity}'
+
+
 
