@@ -23,5 +23,8 @@ urlpatterns = [
     path('pages/', include('django.contrib.flatpages.urls')),
     path('miniapp/', include('miniapp.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
-    path('accounts/', include('accounts.urls'))
+    path('accounts/', include('accounts.urls')),
+    # path('accounts/', include('allauth.urls')),
+
+
 ]
