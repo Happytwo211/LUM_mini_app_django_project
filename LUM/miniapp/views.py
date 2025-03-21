@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import User_benefits_data, User
+from .models import User_benefits_data, User, Benefits
 from django.views.generic import DetailView, ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
@@ -19,4 +19,8 @@ class UserList(LoginRequiredMixin,ListView):
     context_object_name = 'user_list'
 
 
-
+class BenefitsList(LoginRequiredMixin,ListView):
+    raise_exception = True
+    model = Benefits
+    template_name = 'benefits.html'
+    context_object_name = 'benefits_list'
