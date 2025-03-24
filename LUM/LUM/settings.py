@@ -95,7 +95,7 @@ WSGI_APPLICATION = 'LUM.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db1.sqlite3',
+        'NAME': BASE_DIR / 'db5.sqlite3',
     }
 }
 
@@ -148,7 +148,7 @@ STATICFILES_DIRS = [
     BASE_DIR / "static"
 ]
 
-LOGIN_REDIRECT_URL = "/miniapp/user/1/"
+LOGIN_REDIRECT_URL = "/miniapp/user/"
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',

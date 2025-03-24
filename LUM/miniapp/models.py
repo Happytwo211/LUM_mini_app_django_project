@@ -21,16 +21,16 @@ class Benefits(models.Model):
     def __str__(self):
         return f'{self.benefits_type}'
 
-class CustomUser(User):
-    class Meta():
-        permissions = [
-            ('view_user_list', 'Can view user list')
-        ]
+# class CustomUser(User):
+#     username1 = models.CharField(max_length=150)
+#     class Meta():
+#         permissions = [
+#             ('view_user_list', 'Can view user list')
+#         ]
 
 class User_benefits_data(models.Model):
-
     user = models.ForeignKey(
-        to=CustomUser, default=0, on_delete=models.CASCADE)
+        to=User, default=0, on_delete=models.CASCADE)
     # user_benefits_type = models.ForeignKey(Benefits, on_delete=models.CASCADE)
     user_benefits_type = models.ManyToManyField(Benefits)
     user_benefits_quantity = models.IntegerField(default=0)
@@ -39,6 +39,5 @@ class User_benefits_data(models.Model):
         return self.user.get_username()
     def __str__(self):
         return f'Пользователь:{self.user}-Количество бонусов:{self.user_benefits_quantity}'
-
 
 
