@@ -21,13 +21,6 @@ class Benefits(models.Model):
     def __str__(self):
         return f'{self.benefits_type}'
 
-# class CustomUser(User):
-#     username1 = models.CharField(max_length=150)
-#     class Meta():
-#         permissions = [
-#             ('view_user_list', 'Can view user list')
-#         ]
-
 class User_benefits_data(models.Model):
     user = models.ForeignKey(
         to=User, default=0, on_delete=models.CASCADE)
@@ -41,3 +34,9 @@ class User_benefits_data(models.Model):
         return f'Пользователь:{self.user}-Количество бонусов:{self.user_benefits_quantity}'
 
 
+class Tours(models.Model):
+    tour_name = models.CharField(max_length=80)
+    tour_description = models.CharField(max_length=200)
+
+    def __str__(self):
+        return f'{self.tour_name}\n{self.tour_description}'

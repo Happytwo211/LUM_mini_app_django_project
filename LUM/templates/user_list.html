@@ -13,6 +13,7 @@
 <table>
 
     <tr>
+        <td>id</td>
         <td>Юзер-нейм</td>
         <td>Электронная почта</td>
         <td>Cтафф</td>
@@ -22,6 +23,7 @@
     {% for user in user_list %}
 
     <tr>
+        <td>{{user.id}}</td>
         <td>{{user.username}}</td>
         <td>{{user.email}}</td>
         <td>{{user.is_staff}}</td>

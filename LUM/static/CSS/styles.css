@@ -1,49 +1,93 @@
-body {
-  margin: 0; /* Убираем отступы по краям */
-  background-color: #ffcdd2; /* Нежно-красный фон */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh; /* Устанавливаем минимальную высоту окна браузера */
+<style>
+
+    body {
+    height: 100vh;
+    font-family: Georgia, serif;
+    margin: 0;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    background-color: #D8A3A3;
 }
 
-.square-container {
-  width: 400px; /* Ширина квадрата */
-  height: 400px; /* Высота квадрата */
-  border: 2px solid black; /* Рамка вокруг квадрата */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: white; /* Фоновый цвет квадрата */
+.container {
+    width: 20%;
+    margin: 50px auto;
+    background-color: #D3D3D3;
+    border: 1px solid #cccccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
 }
 
-.square-image {
-  max-width: 100%; /* Изображение внутри квадрата */
-  max-height: 100%;
+.header {
+    background-color: #D3D3D3;
+    padding: 20px;
+    text-align: center;
+
+}
+
+
+.content {
+    padding: 20px;
+    font-size: 16px;
+    line-height: 1.6;
+
+}
+
+.navbar a {
+  text-decoration: none; /* Убираем подчеркивание ссылок */
+  color: inherit; /* Наследуем белый цвет текста */
+  padding: 10px 15px; /* Внутренний отступ вокруг ссылок */
+  transition: background-color 0.3s ease-in-out; /* Плавная анимация фона */
+}
+
+.navbar a:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Подсветка при наведении */
 }
 
 /* Навигационная панель */
 .navbar {
   gap: 20px;
-  position: fixed; /* Фиксируем внизу экрана */
-  bottom: 0;
-  width: 100%;
+  position: fixed; /* Фиксируем позицию */
+  bottom: 0; /* Закрепляем внизу экрана */
+  left: 0;
+  right: 0;
+  width: 100%; /* Ширина панели на всю ширину экрана */
   height: 50px; /* Высота панели */
-  background-color: #f48fb1; /* Цвет панели */
+  background-color: #762B2B; /* Цвет панели */
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 18px;
   color: white;
 }
-
-.zoom {
-            transition: transform 0.3s ease-in-out;
-            width: 200px; /* Начальная ширина изображения */
-            height: auto; /* Автоматическая высота */
-        }
-
-.zoom:hover {
-    transform: scale(1.25); /* Увеличение до 125% */
+.navbar-up {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 10px 20px;
+}
+.navbar-menu {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
 }
 
+.navbar-menu li {
+    margin-left: 20px;
+}
+
+.navbar-menu a {
+    text-decoration: none;
+    color: #343a40;
+    font-size: 16px;
+}
+
+.navbar-menu a:hover {
+    color: #007bff;
+}
+
+
+</style>

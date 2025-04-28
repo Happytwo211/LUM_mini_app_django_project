@@ -1,0 +1,62 @@
+body {
+  margin-top: 50 px; /* Убираем отступы по краям */
+  background-color: #ffcdd2; /* Нежно-красный фон */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Устанавливаем минимальную высоту окна браузера */
+}
+
+.square-container {
+  width: 400px; /* Ширина квадрата */
+  height: 400px; /* Высота квадрата */
+  border: 2px solid black; /* Рамка вокруг квадрата */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white; /* Фоновый цвет квадрата */
+}
+
+.square-image {
+  max-width: 100%; /* Изображение внутри квадрата */
+  max-height: 100%;
+}
+
+.navbar a {
+  text-decoration: none; /* Убираем подчеркивание ссылок */
+  color: inherit; /* Наследуем белый цвет текста */
+  padding: 10px 15px; /* Внутренний отступ вокруг ссылок */
+  transition: background-color 0.3s ease-in-out; /* Плавная анимация фона */
+}
+
+.navbar a:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Подсветка при наведении */
+}
+
+/* Навигационная панель */
+.navbar {
+  gap: 20px;
+  position: fixed; /* Фиксируем вверху экрана */
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 50px; /* Высота панели */
+  background-color: #f48fb1; /* Цвет панели */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: white;
+}
+
+.zoom {
+            transition: transform 0.3s ease-in-out;
+            width: 200px; /* Начальная ширина изображения */
+            height: auto; /* Автоматическая высота */
+        }
+
+.zoom:hover {
+    transform: scale(1.25); /* Увеличение до 125% */
+}
+

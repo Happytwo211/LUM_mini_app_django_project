@@ -1,42 +1,59 @@
-{%extends 'flatpages/default.html'%}
+{% extends 'flatpages/default.html' %}
 
 {% block content %}
 
 {% block user_box %}
-
     {% if user_benefits_data %}
-
-          <div class="content">
-            <h1>{{user_benefits_data.user}}</h1>
-              <h1>Количесвто бонусов:{{user_benefits_data.user_benefits_quantity}}</h1>
+        <div class="content" style="text-align: center;">  <!-- Центрируем текст -->
+            <h1>{{ user_benefits_data.user }}</h1>
+            <h1>Количество бонусов: {{ user_benefits_data.user_benefits_quantity }}</h1>
             <p>Информация о пользователе</p>
-          </div>
+        </div>
 
-          <!-- Большой квадрат для изображения -->
-          <div class="square-container">
-          <img src="https://i.postimg.cc/YGNnrsym/img.png" alt="Ошибка загрузки изображения" class="zoom">
-
-          </div>
-
+        <!-- Большой квадрат для изображения с анимацией -->
+        <div class="square-container" style="text-align: center; margin: 20px auto;">
+            <img
+                src="https://i.postimg.cc/YGNnrsym/img.png"
+                alt="Ошибка загрузки изображения"
+                class="zoom"
+                style="
+                    max-width: 300px;
+                    transition: transform 0.3s ease;
+                "
+            >
+        </div>
     {% else %}
-
-        <h1> Такого пользователя нет!</h1>
-
+        <h1 style="text-align: center;">Такого пользователя нет!</h1>
     {% endif %}
-
 {% endblock %}
 
 {% block img %}
-
-'https://i.postimg.cc/YGNnrsym/img.png'
+    'https://i.postimg.cc/YGNnrsym/img.png'
 {% endblock %}
 
 {% block signout %}
-<div>
-    <a href="/accounts/oauth/logout">Выйти из аккаунта</a>
-</div>
-
+    <div style="text-align: center; margin: 20px;">
+        <a href="/accounts/oauth/logout">Выйти из аккаунта</a>
+    </div>
 {% endblock %}
 
 {% endblock content %}
 
+<style>
+    /* Анимация увеличения при наведении */
+    .zoom:hover {
+        transform: scale(1.1);  /* Увеличиваем на 10% */
+    }
+
+    /* Дополнительные стили для красоты */
+    .content {
+        margin: 20px auto;
+        max-width: 800px;
+    }
+
+    .square-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
