@@ -31,4 +31,4 @@ class ToursList(ListView):
     model = Tours
     template_name = 'tours_list.html'
     context_object_name = 'tours_list'
-
+    paginate_by = 5
